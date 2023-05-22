@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Bicho</title>
+    <link rel="stylesheet" href="bicho.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="box-1">
+                <div id="menu">
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:5500/index.html"><span class="bx bxs-home"></span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/imc/imc.html"><span class="bx bxs-calculator"></span>
+                                <span>Cálculo IMC</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/jogodavelha/jogodavela.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Jogo da Velha</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/combustivel/index.html"><span class="bx bxs-hot"></span>
+                                <span>Combustível</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/lotofacil.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Lotofácil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/megasena.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Mega Sena</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/bicho.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Jogo do Bicho</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/diadesorte.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Dia de Sorte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column" id="playLoto">
+                <div class="body">
+                    <div id="fundo">
+                        <h1>Jogo do Bicho</h1>
+                        <div id="divNumeros" class="vNumeros">
+                            <div class="box1">
+                                <span id="um" class="numeros"></span>
+                                <span id="dois" class="numeros"></span>
+                                <span id="tres" class="numeros"></span>
+                                <span id="quatro" class="numeros"></span>
+                            </div>
+                            <div class="box2">
+                                <span id="resnum1" class="resnum"></span>
+                            </div>
+                            <br></br>
+                            <div class="box3">
+                                <span id="cinco" class="numeros"></span>
+                                <span id="seis" class="numeros"></span>
+                                <span id="sete" class="numeros"></span>
+                                <span id="oito" class="numeros"></span>
+                            </div>
+                            <div class="box4">
+                                <span id="resnum2" class="resnum"></span>
+                            </div>
+                            <br></br>
+                            <div class="box5">
+                                <span id="nove" class="numeros"></span>
+                                <span id="dez" class="numeros"></span>
+                                <span id="onze" class="numeros"></span>
+                                <span id="doze" class="numeros"></span>
+                            </div>
+                            <div class="box6">
+                                <span id="resnum3" class="resnum"></span>
+                            </div>
+                            <br></br>
+                            <div class="box7">
+                                <span id="treze" class="numeros"></span>
+                                <span id="quatorze" class="numeros"></span>
+                                <span id="quinze" class="numeros"></span>
+                                <span id="dezeseis" class="numeros"></span>
+                            </div>
+                            <div class="box8">
+                                <span id="resnum4" class="resnum"></span>
+                            </div>
+                            <br></br>
+                            <div class="box9">
+                                <span id="dezesete" class="numeros"></span>
+                                <span id="dezoito" class="numeros"></span>
+                                <span id="dezenove" class="numeros"></span>
+                                <span id="vinte" class="numeros"></span>
+                            </div>
+                            <div class="box10">
+                                <span id="resnum5" class="resnum"></span>
+                            </div>
+                            <br></br>
+                            <div class="box11">
+                                <span id="vinteeum" class="numeros"></span>
+                                <span id="vinteedois" class="numeros"></span>
+                                <span id="vinteetres" class="numeros"></span>
+                                <span id="vinteequatro" class="numeros"></span>
+                            </div>
+                            <div class="box12">
+                                <span id="resnum6" class="resnum"></span>
+                            </div>
+                            <br></br>
+                            <div class="box13" id="btgerar" style="align-items: center;">
+                                <button id="btGerarNumeros" onclick="gerar()">Gerar</button>
+                                <button id="btLimparNumeros" onclick="limparNumeros()">Limpar</button>
+                            </div>
+                            <br>
+                            <div class="box14">
+                                <h3 id="hFixo">
+
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="bicho.js"></script>
+    <script>
+        function abrirMenu() {
+            document.getElementById('menu').style.width = '250px'
+        }
+        function fecharMenu() {
+            document.getElementById('menu').style.width = '0px'
+        }
+    </script>
+</body>
+
+</html>
